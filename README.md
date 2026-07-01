@@ -50,7 +50,7 @@ Vocabulary:
 ### From source
 
 ```bash
-git clone https://github.com/omarbenjamin/learning-english-dev-cli.git
+git clone https://github.com/benjamin0mar/learning-english-dev-cli.git
 cd learning-english-dev-cli
 cargo build --release
 cp target/release/led ~/.local/bin/
