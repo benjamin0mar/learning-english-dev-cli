@@ -3,22 +3,20 @@ use std::{env, fs, path::PathBuf};
 
 use crate::types::Config;
 
-fn config_dir() -> PathBuf {
-    dirs::home_dir()
-        .unwrap_or_else(|| PathBuf::from("."))
-        .join(".learning-english-dev-cli")
+fn data_dir() -> PathBuf {
+    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("config")
 }
 
 fn config_path() -> PathBuf {
-    config_dir().join("config.toml")
+    data_dir().join("config.toml")
 }
 
 fn env_path() -> PathBuf {
-    config_dir().join(".env")
+    data_dir().join(".env")
 }
 
 fn create_default_config() -> Result<Config> {
-    let dir = config_dir();
+    let dir = data_dir();
     fs::create_dir_all(&dir)?;
 
     let config = Config::default();

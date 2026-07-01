@@ -50,7 +50,7 @@ Rules:
 
 For each level, provide:
 - "corrected": the corrected text
-- "changes": array of {{"type": "missing"|"replaced"|"added", "word": "...", "original": "...", "replacement": "..."}}
+- "changes": array of {{"type": "missing"|"replaced"|"added"|"capitalized", "word": "...", "original": "...", "replacement": "..."}}
 - "explanation": brief explanation of key changes
 - "vocabulary": array of {{"word": "...", "definition": "..."}} (can be null)
 

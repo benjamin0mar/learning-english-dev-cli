@@ -3,6 +3,11 @@ target/
 .env
 .env.*
 
+# User runtime files (config, secrets, history)
+config/.env
+config/config.toml
+config/history.json
+
 .DS_Store
 *.swp
 *.swo

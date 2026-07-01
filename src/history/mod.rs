@@ -3,18 +3,16 @@ use std::{fs, path::PathBuf};
 
 use crate::types::{Config, HistoryEntry};
 
-fn history_dir() -> PathBuf {
-    dirs::home_dir()
-        .unwrap_or_else(|| PathBuf::from("."))
-        .join(".learning-english-dev-cli")
+fn data_dir() -> PathBuf {
+    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("config")
 }
 
 fn history_path() -> PathBuf {
-    history_dir().join("history.json")
+    data_dir().join("history.json")
 }
 
 pub fn save_entry(entry: &HistoryEntry, config: &Config) -> Result<()> {
-    let dir = history_dir();
+    let dir = data_dir();
     fs::create_dir_all(&dir)?;
 
     let path = history_path();

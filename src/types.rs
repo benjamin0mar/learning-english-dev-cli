@@ -54,6 +54,7 @@ pub enum ChangeType {
     Missing,
     Replaced,
     Added,
+    Capitalized,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

@@ -8,7 +8,7 @@ pub fn format_change(change: &WordChange) -> String {
             let word = change.word.as_deref().unwrap_or("?");
             format!("{}  {} {}", "+".green().bold(), word.green().bold(), "(added by AI)".bright_black())
         }
-        ChangeType::Replaced => {
+        ChangeType::Replaced | ChangeType::Capitalized => {
             let original = change.original.as_deref().unwrap_or("?");
             let replacement = change.replacement.as_deref().unwrap_or("?");
             format!(
@@ -27,7 +27,7 @@ pub fn highlight_diff(original: &str, changes: &[WordChange]) -> String {
 
     for change in changes {
         match change.change_type {
-            ChangeType::Replaced => {
+            ChangeType::Replaced | ChangeType::Capitalized => {
                 if let Some(ref original_word) = change.original {
                     if let Some(ref replacement) = change.replacement {
                         result = result.replace(
