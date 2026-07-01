@@ -1,0 +1,7 @@
+provider = "auto"
+groq_api_key = ""
+ollama_base_url = "http://localhost:11434"
+ollama_model = "gpt-oss:120b-cloud"
+default_level = "B1"
+history_limit = 50
+
