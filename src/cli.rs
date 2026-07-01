@@ -8,7 +8,7 @@ use crate::types::{InputType, LevelKey};
     name = "learning-english-dev-cli",
     version,
     about = "AI-powered English writing assistant for software developers",
-    long_about = "DevCoach helps software developers write better English for commits, PRs, and AI prompts.\n\nSupports 5 CEFR levels (A1-C1) with corrections, vocabulary definitions, and explanations.\n\nExamples:\n  learning-english-dev-cli \"fix the bug\"\n  echo \"commit message\" | learning-english-dev-cli\n  learning-english-dev-cli --file msg.txt -t prompt\n  learning-english-dev-cli history --last 5"
+    long_about = "LearningEnglishDev helps software developers write better English for commits, PRs, and AI prompts.\n\nSupports 5 CEFR levels (A1-C1) with corrections, vocabulary definitions, and explanations.\n\nExamples:\n  led \"fix the bug\"\n  echo \"commit message\" | led\n  led --file msg.txt -t prompt\n  led history --last 5"
 )]
 pub struct Cli {
     #[command(subcommand)]

@@ -91,7 +91,7 @@ async fn handle_analyze(
         eprintln!("{} Warning: failed to save history: {}", "[!]".yellow(), e);
     }
 
-    let output = display::format_output(&response, &level, json, no_color);
+    let output = display::format_output(&response, &input_type, &level, json, no_color);
     println!("{}", output);
 
     Ok(())

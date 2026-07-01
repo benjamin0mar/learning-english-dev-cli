@@ -4,9 +4,9 @@ pub mod table;
 use colored::*;
 
 use crate::cli::LevelFilter;
-use crate::types::{LevelKey, SuggestResponse};
+use crate::types::{InputType, LevelKey, SuggestResponse};
 
-pub fn format_output(response: &SuggestResponse, level_filter: &LevelFilter, json_mode: bool, no_color: bool) -> String {
+pub fn format_output(response: &SuggestResponse, input_type: &InputType, level_filter: &LevelFilter, json_mode: bool, no_color: bool) -> String {
     if no_color {
         colored::control::set_override(false);
     }
@@ -15,14 +15,14 @@ pub fn format_output(response: &SuggestResponse, level_filter: &LevelFilter, jso
         return format_json_output(response);
     }
 
-    format_ansi_output(response, level_filter)
+    format_ansi_output(response, input_type, level_filter)
 }
 
 fn format_json_output(response: &SuggestResponse) -> String {
     serde_json::to_string_pretty(response).unwrap_or_default()
 }
 
-fn format_ansi_output(response: &SuggestResponse, level_filter: &LevelFilter) -> String {
+fn format_ansi_output(response: &SuggestResponse, input_type: &InputType, level_filter: &LevelFilter) -> String {
     let mut output = String::new();
 
     output.push_str(&format!(
@@ -32,13 +32,14 @@ fn format_ansi_output(response: &SuggestResponse, level_filter: &LevelFilter) ->
     output.push_str(&format!(
         "{} {} {}\n",
         "│".bright_black(),
-        "DevCoach — English for devs".cyan().bold(),
+        "LearningEnglishDev — English for devs".cyan().bold(),
         "│".bright_black(),
     ));
     output.push_str(&format!(
-        "{}  Provider: {}  |  Input: commit  │{}\n",
+        "{}  Provider: {}  |  Input: {}  {}\n",
         "│".bright_black(),
         response.provider.green(),
+        input_type.as_str().cyan(),
         "│".bright_black(),
     ));
     output.push_str(&format!(

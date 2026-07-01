@@ -3,9 +3,18 @@ name = "learning-english-dev-cli"
 version = "0.1.0"
 edition = "2021"
 description = "AI-powered English writing assistant for software developers"
+authors = ["Omar Benjamin"]
+license = "CC-BY-NC-4.0"
+repository = "https://github.com/omarbenjamin/learning-english-dev-cli"
+keywords = ["english", "learning", "cefr", "writing", "cli"]
+categories = ["command-line-utilities", "development-tools"]
 
 [[bin]]
 name = "learning-english-dev-cli"
+path = "src/main.rs"
+
+[[bin]]
+name = "led"
 path = "src/main.rs"
 
 [lib]
