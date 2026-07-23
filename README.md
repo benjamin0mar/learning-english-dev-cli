@@ -10,22 +10,22 @@ $ led "fix the bug"
 │  Provider: groq  |  Input: commit            │
 ╰──────────────────────────────────────────────╯
 
- ──  Level B1  ────────────────────────────────
+ ──  Level B2  ───────────────────────────────
 
-Corrected Text: Fixed the bug
+Corrected Text: Resolved the identified bug
 
  Changes:
-  ~  fix  →  Fixed
+  ~  fix  →  Resolved
+  +  identified (added by AI)
 
 Explanation:
-  Changed the verb tense to past tense to indicate
-  the bug has been resolved.
+  Used more precise technical vocabulary and added 'identified' to clarify the nature of the bug.
 
 Vocabulary:
 +----------+---------------------------------+
 | Word     | Definition                      |
 +----------+---------------------------------+
-| resolved | solved or fixed                 |
+| resolved | solved or dealt with a problem  |
 +----------+---------------------------------+
 ```
 
